@@ -105,3 +105,14 @@
     margin: 0;
     font-size: 18px;
 }
+
+.custom-note {
+    width: 100%; 
+    resize: vertical;
+}
+
+.note-preview {
+    margin-top: 8px; 
+    min-height: 20px; 
+    color: #555;
+}

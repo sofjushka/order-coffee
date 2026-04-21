@@ -4,9 +4,24 @@
     padding: 15px;
 }
 
+.header-wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between; 
+    align-items: baseline;
+}
+
 .beverage-count {
     margin: 0 0 15px;
 }
+
+.cross {
+    margin: 0;
+    cursor: pointer;
+}
+
+
 
 .field {
     display: block;
@@ -44,4 +59,3 @@
     border: 2px solid orange;
     border-radius: 5px;
 }
-

@@ -40,6 +40,7 @@ addBeverageBtn.addEventListener('click', () => {
     });
 
     form.insertBefore(newBeverage, addBeverageBtnWrapper);
+    setupRemoveButton(newBeverage);
 });
 
 function getDrinkWord(count) {
@@ -69,7 +70,32 @@ submitBtn.addEventListener('click', (e) => {
     modal.innerHTML = `
         <button type="button" class="modal-close">&times;</button>
         <p>Вы заказали ${count} ${drinkWord}</p>
+        <table border="1">
+        <tr>
+            <th>Напиток</th>
+            <th>Молоко</th>
+            <th>дополнительно</th>
+        </tr>
+        </table>
     `;
+
+    const allBeverages = document.querySelectorAll('.beverage');
+    for (drink of allBeverages) {
+        const drinkName = drink.querySelector('select option:checked').textContent;
+        const milkType = drink.querySelector('input[type="radio"]:checked + span').textContent;
+        const options = Array.from(drink.querySelectorAll('input[type="checkbox"]:checked'))
+            .map(cb => cb.nextElementSibling.textContent)
+            .join(', ');
+
+        modal.querySelector('table').innerHTML += `
+            <tr>
+                <td>${drinkName}</td>
+                <td>${milkType}</td>
+                <td>${options}</td>
+            </tr>
+        `;
+
+    }
     
     overlay.appendChild(modal);
     document.body.appendChild(overlay);

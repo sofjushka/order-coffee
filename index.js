@@ -102,7 +102,7 @@ submitBtn.addEventListener('click', (e) => {
                 <th style="padding: 5px;">Напиток</th>
                 <th style="padding: 5px;">Молоко</th>
                 <th style="padding: 5px;">Дополнительно</th>
-                <th style="padding: 5px;">Комментарий</th>
+                <th style="padding: 5px;">Пожелания</th>
             </tr>
         </table>
     `;
